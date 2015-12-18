@@ -7,3 +7,13 @@ Simple RESTful Web service using JAX-RS (using jersey implemantation) on top of 
 
 ## Data model (schema)
 Department => `{ "id": 99, "name": "Talent Management", "description": "Department description" }`
+
+## Main Controller
+sample_rest_service/ui/demo-rest/app/controllers/departments_controller.rb
+
+### Actions
+index -> List
+show 
+create
+update
+set_department
