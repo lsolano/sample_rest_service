@@ -68,15 +68,17 @@ public class DepartmentsResource {
 
   @POST
   @Consumes(MediaType.APPLICATION_JSON)
-  public Response add(final @Context UriInfo uriInfo,  final byte[] in) throws URISyntaxException {
+  public Response add(final @Context UriInfo uriInfo, final byte[] in) throws URISyntaxException {
     Gson gson = new Gson();
     Department dep = gson.fromJson(new InputStreamReader(new ByteArrayInputStream(in)), Department.class);
     if (db.containsKey(dep.getId())) {
       return Response.status(Status.CONFLICT).build();
     }
 
-    db.put(dep.getId(), dep);
-    return Response.created(new URI(uriInfo.getPath() + "/" + dep.getId() )).build();
+    int newId = db.size() + 1;
+    dep.setId(newId);
+    db.put(newId, dep);
+    return Response.created(new URI(uriInfo.getPath() + "/" + dep.getId())).build();
   }
 
   @PUT
