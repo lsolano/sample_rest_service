@@ -12,8 +12,8 @@ Department => `{ "id": 99, "name": "Talent Management", "description": "Departme
 sample_rest_service/ui/demo-rest/app/controllers/departments_controller.rb
 
 ### Actions
-index -> List
-show 
-create
-update
-set_department
+* index
+* show
+* create
+* update
+* set_department
