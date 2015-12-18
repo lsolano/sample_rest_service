@@ -1,0 +1,19 @@
+<h1>Editing Department</h1>
+
+<%= form_for(@department, :url => { :action => "update" }, :method => :patch) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <input type="submit" name="commit" value="Update Department">
+  </div>
+<% end %>
+
+<%= link_to 'Show', :controller=> "departments", :action => "show", :id => @department.id  %> |
+<%= link_to 'Back', departments_path %>

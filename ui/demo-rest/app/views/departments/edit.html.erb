@@ -1,0 +1,20 @@
+<h1>Editing Department</h1>
+
+<form class="edit_department" id="edit_department_<%= @department.id%>" action="/departments/<%= @department.id%>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="patch" /><input type="hidden" name="authenticity_token2" value="y1rIN1MZD/VwAz2FqOOlHiX4w90en5kVKtSibsjvevRnCdwLWJPlZA1CSPgVH6+q93Q962XGdmJu9AudYi38hA==" />
+
+  <div class="field">
+    <label for="department_name">Name</label><br>
+    <input type="text" value="<%= @department.name %>" name="department[name]" id="department_name" />
+  </div>
+  <div class="field">
+    <label for="department_description">Description</label><br>
+    <textarea name="department[description]" id="department_description">
+<%= @department.description %></textarea>
+  </div>
+  <div class="actions">
+    <input type="submit" name="commit" value="Update Department" />
+  </div>
+</form>
+
+<%= link_to 'Show', :controller=> "departments", :action => "show", :id => @department.id  %> |
+<%= link_to 'Back', departments_path %>
