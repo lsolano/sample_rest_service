@@ -17,3 +17,8 @@ sample_rest_service/ui/demo-rest/app/controllers/departments_controller.rb
 * create
 * update
 * set_department
+
+
+## TMP Servers
+* http://40.121.52.254
+* http://40.76.93.236:8080 (Firewall)
